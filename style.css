@@ -1,4 +1,5 @@
 :root {
+  user-select: none;
   --primary-color: #6366f1;
   --bg-color: #f3f4f6;
   --card-bg: #ffffff;
@@ -13,12 +14,21 @@
   --priority-low: #10b981;
   --priority-completed: #6366f1;
 }
+.drag * {
+  pointer-events: none;
+}
 
+.column.drag {
+  background-color: #8b5cf6;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
 
 body {
@@ -85,7 +95,9 @@ body {
   border-radius: 0.75rem;
   box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
   border: 1px solid rgb(229 231 235);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    all 1s ease,
+    box-shadow 0.2s ease;
 }
 
 .task:hover {
@@ -171,12 +183,12 @@ body {
   body {
     padding: 1rem;
   }
-  
+
   .board {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .kanban h1 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
