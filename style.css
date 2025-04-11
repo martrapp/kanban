@@ -1,5 +1,6 @@
 :root {
   user-select: none;
+  -webkit-user-select: none;
   --primary-color: #6366f1;
   --bg-color: #f3f4f6;
   --card-bg: #ffffff;
@@ -14,11 +15,14 @@
   --priority-low: #10b981;
   --priority-completed: #6366f1;
 }
-.drag * {
+.dropArea * {
   pointer-events: none;
 }
 
-.column.drag {
+:root {
+  view-transition-name: none;
+}
+.column.dropArea {
   background-color: #8b5cf6;
 }
 * {
@@ -95,9 +99,11 @@ body {
   border-radius: 0.75rem;
   box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
   border: 1px solid rgb(229 231 235);
-  transition:
-    all 1s ease,
-    box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+}
+
+.dragged {
+  opacity: 0.5;
 }
 
 .task:hover {
